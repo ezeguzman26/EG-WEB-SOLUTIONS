@@ -1,0 +1,292 @@
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body {
+  background: #000; /* fondo negro general */
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+/* Header */
+header {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:1rem 2rem;
+  background:#111;
+  color:#fff;
+}
+.logo-container {
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+}
+.logo {width:80px; height:80px;}
+.logo-container h1 {font-size:2rem; text-align:center; color:#fff; margin-left:10px;}
+
+/* Navegación */
+.nav-minimal {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:35px;
+  margin-top:15px;
+}
+.nav-minimal a {
+  position: relative;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:1rem;
+  padding:5px 0;
+  transition:0.3s;
+}
+.nav-minimal a::after {
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:0;
+  left:0;
+  background:#25D366;
+  transition:0.3s;
+}
+.nav-minimal a:hover::after {width:100%;}
+
+/* Hero */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+.hero h2, .hero p, .btn-primary {opacity:0; animation: fadeInUp 1s forwards;}
+.hero h2 {animation-delay:0.3s; font-size:2.8rem; margin-bottom:1rem;}
+.hero p {animation-delay:0.6s; font-size:1.2rem; margin-bottom:2rem; max-width:90%;}
+@keyframes fadeInUp {0%{opacity:0; transform:translateY(20px);}100%{opacity:1; transform:translateY(0);}}
+
+/* Botón */
+.btn-primary, .contact-btn {
+  background:#25D366;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+.btn-primary:hover, .contact-btn:hover {background:#128C7E; transform:scale(1.05);}
+
+/* Servicios */
+#servicios {padding:60px 10%; text-align:center;}
+#servicios h3 {font-size:2.5rem; margin-bottom:40px;}
+.services {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+.service {
+  background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.service:nth-child(1) { background: linear-gradient(135deg, #25D366, #128C7E); color:#fff; }
+.service:nth-child(2) { background: linear-gradient(135deg, #ff7e5f, #feb47b); color:#fff; }
+.service:nth-child(3) { background: linear-gradient(135deg, #6a11cb, #2575fc); color:#fff; }
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.service img {width:100%; border-radius:12px; margin-bottom:15px;}
+.service h4 {margin-bottom:10px; color:#111;}
+.service p {
+  color: #111; /* negro */
+}
+
+/* Proyectos */
+#proyectos {padding:60px 10%; text-align:center;}
+#proyectos h3 {font-size:2.5rem; margin-bottom:40px;}
+.projects-slider {display:flex; overflow:hidden; gap:20px;}
+.slide {min-width:100%; transition: transform 0.5s ease; border-radius:12px; overflow:hidden;}
+.projects-slider img {width:100%; display:block;}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #000000, #128C7E);
+  color:#fff;
+  padding:80px 20px;
+  border-radius:12px;
+  text-align:center;
+  margin:60px 10px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.cta h3 {font-size:2.5rem; margin-bottom:10px;}
+.cta p {font-size:1.2rem; line-height:1.5; color:#e0f7e5;}
+.contact-buttons {display:flex; flex-direction:column; gap:20px; align-items:center; margin-top:20px;}
+.email-btn {background:#128C7E; color:#fff;}
+.email-btn:hover {background:#25D366;}
+
+/* WhatsApp flotante */
+.whatsapp {
+  position:fixed; bottom:20px; right:20px; width:60px; height:60px; z-index:1000; transition:0.3s;
+}
+.whatsapp:hover {transform:scale(1.1);}
+.whatsapp img {width:100%; height:100%;}
+
+/* Footer */
+footer {background:#000000; color:#fff; text-align:center; padding:40px 20px;}
+footer a {color:#25D366; text-decoration:none;}
+footer a:hover {text-decoration:underline;}
+
+/* Responsive */
+@media(max-width:768px){
+  header {flex-direction:column; padding:1rem 1rem;}
+  .logo-container {flex-direction:column; gap:0.5rem;}
+  .logo {width:70px; height:70px;}
+  .logo-container h1 {font-size:1.8rem;}
+  .hero h2 {font-size:2rem;}
+  .hero p {font-size:1rem;}
+  .nav-minimal {gap:20px; flex-wrap:wrap;}
+}
+@media(max-width:480px){
+  .logo {width:60px; height:60px;}
+  .logo-container h1 {font-size:1.5rem;}
+  .hero h2 {font-size:1.6rem;}
+  .hero p {font-size:0.95rem;}
+  .btn-primary, .contact-btn {padding:12px 24px;}
+  .nav-minimal {flex-direction:column; gap:15px;}
+}
+.contact-buttons {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna en móvil */
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-btn {
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+  width: 250px; /* Fuerza el mismo ancho para ambos botones */
+  text-align: center;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+.contact-btn.whatsapp-btn {
+  background: #030303; /* negro */
+  color: #25D366;      /* verde WhatsApp */
+}
+
+.contact-btn.email-btn {
+  background: #030303; /* negro */
+  color: #fff;         /* texto blanco */
+}
+
+.contact-btn.whatsapp-btn:hover,
+.contact-btn.email-btn:hover {
+  background: #25D366; /* verde al pasar mouse */
+  color: #fff;
+}
+
+.contact-btn.instagram-btn {
+  background: #030303; /* negro */
+  color: #E1306C;      /* rosa característico de Instagram */
+}
+
+.contact-btn.instagram-btn:hover {
+  background: #E1306C;
+  color: #fff;
+  transform: scale(1.05);
+}
+/* Sección Sobre Nosotros */
+.about {
+  padding: 60px 10%;
+  text-align: center;
+  background: #000000; /* negro, para que contraste con el texto blanco */
+  color: #fff;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.about h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #25D366; /* verde destacado */
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ddd;
+}
+
+.about img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación título */
+.animate-title {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Animación logo */
+.animate-logo {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.1s;
+}
+
+/* Animación nav */
+.animate-nav {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Opcional: animar cada link del nav con pequeño retraso */
+.animate-nav a {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeInUp 0.8s forwards;
+}
+
+.animate-nav a:nth-child(1){animation-delay:0.5s;}
+.animate-nav a:nth-child(2){animation-delay:0.6s;}
+.animate-nav a:nth-child(3){animation-delay:0.7s;}
+.animate-nav a:nth-child(4){animation-delay:0.8s;}
+
+.divider-green {
+  border: 0;
+  height: 4px;
+  width: 500px; /* o el ancho que quieras */
+  background-color: #25D366; /* verde corporativo */
+  margin: 40px auto; /* centrado y con espacio arriba y abajo */
+  border-radius: 2px; /* bordes redondeados */
+}
