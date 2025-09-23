@@ -285,32 +285,11 @@ footer a:hover {text-decoration:underline;}
 .divider-green {
   border: 0;
   height: 4px;
-  width: 500px; /* o el ancho que quieras */
+  width: 100px; /* o el ancho que quieras */
   background-color: #25D366; /* verde corporativo */
   margin: 40px auto; /* centrado y con espacio arriba y abajo */
   border-radius: 2px; /* bordes redondeados */
 }
 
-/* === Fix para que la página no se mueva lateralmente en móvil === */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden !important; /* bloquea desplazamiento lateral */
-  position: relative;
-}
 
-/* Evitar que los contenedores ocupen más de la pantalla */
-* {
-  box-sizing: border-box;
-}
 
-/* El menú en móvil no debe desbordar */
-.nav-minimal {
-  width: 100%;
-  justify-content: center;   /* centra los nav */
-  flex-wrap: wrap;           /* si no entran, que bajen de línea */
-  overflow-x: hidden;
-}
-
-.nav-minimal a {
-  white-space: nowrap;       /* evita saltos raros */
-}
