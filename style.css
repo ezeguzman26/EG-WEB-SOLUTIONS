@@ -285,11 +285,12 @@ footer a:hover {text-decoration:underline;}
 .divider-green {
   border: 0;
   height: 4px;
-  width: 150px; /* o el ancho que quieras */
+  width: 250px; /* o el ancho que quieras */
   background-color: #25D366; /* verde corporativo */
   margin: 40px auto; /* centrado y con espacio arriba y abajo */
   border-radius: 2px; /* bordes redondeados */
 }
+
 
 
 
