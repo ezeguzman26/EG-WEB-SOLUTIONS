@@ -291,31 +291,3 @@ footer a:hover {text-decoration:underline;}
   border-radius: 2px; /* bordes redondeados */
 }
 /* Mostrar enlaces del nav en fila horizontal en móviles y permitir scroll horizontal */
-@media (max-width: 768px) {
-  .nav-minimal {
-    display: flex !important;
-    flex-direction: row !important;   /* fila horizontal */
-    gap: 12px;                        /* espacio entre links */
-    padding: 8px 16px;                /* padding lateral para respirar */
-    overflow-x: auto;                 /* permite deslizar si no entran */
-    -webkit-overflow-scrolling: touch;/* scroll suave en iOS */
-    justify-content: flex-start;      /* alineados al inicio, se pueden desplazar */
-    width: 100%;
-    box-sizing: border-box;
-    background: rgba(0,0,0,0.85);     /* mantiene contraste sobre el fondo */
-  }
-
-  /* Evita que los links se partan en varias líneas */
-  .nav-minimal a {
-    white-space: nowrap;
-    flex: 0 0 auto;   /* no crecer ni encoger: ancho según contenido */
-    padding: 8px 6px;
-    margin: 0;
-  }
-
-  /* Opcional: ocultar la barra de scroll en webkit para un look más limpio */
-  .nav-minimal::-webkit-scrollbar { height: 6px; }
-  .nav-minimal::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 6px; }
-  .nav-minimal::-webkit-scrollbar-track { background: transparent; }
-}
-
