@@ -1,28 +1,18 @@
 console.log("Landing EG WEB SOLUTIONS cargada correctamente");
 
 // Toggle menú hamburguesa
-// Menú hamburguesa lateral
 const hamburger = document.getElementById('hamburger');
-const sideMenu = document.getElementById('side-menu');
-const overlay = document.getElementById('overlay');
+const nav = document.getElementById('nav');
 
 hamburger.addEventListener('click', () => {
-  sideMenu.classList.toggle('show');
-  overlay.classList.toggle('show');
+  nav.classList.toggle('show');
 });
 
-overlay.addEventListener('click', () => {
-  sideMenu.classList.remove('show');
-  overlay.classList.remove('show');
+// Hero parallax en desktop
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  if(window.innerWidth > 768){
+    let scrollPos = window.scrollY;
+    hero.style.backgroundPositionY = `${scrollPos * 0.5}px`;
+  }
 });
-
-// Cerrar menú al hacer click en un enlace
-document.querySelectorAll('.side-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    sideMenu.classList.remove('show');
-    overlay.classList.remove('show');
-  });
-});
-
-});
-
