@@ -5,6 +5,7 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('overlay');
 
+
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('open');
   overlay.classList.toggle('show');
@@ -31,3 +32,4 @@ window.addEventListener('scroll', () => {
     hero.style.backgroundPositionY = `${scrollPos * 0.5}px`;
   }
 });
+
