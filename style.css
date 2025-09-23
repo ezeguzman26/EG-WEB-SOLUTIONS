@@ -292,5 +292,24 @@ footer a:hover {text-decoration:underline;}
 }
 
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    display: inline-block;
+    border: 2px solid transparent; /* Para activar el borde */
+    border-radius: 8px;
+    background: linear-gradient(#000, #000) padding-box, /* Fondo interno negro */
+                linear-gradient(90deg, #00ff88, #00ffcc) border-box; /* Gradiente del borde */
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse o dedo */
+.nav-links a:hover {
+    color: #00ffcc;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+}
 
 
