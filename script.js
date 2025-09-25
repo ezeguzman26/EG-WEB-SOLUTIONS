@@ -18,3 +18,12 @@ window.addEventListener('scroll', () => {
     hero.style.backgroundPositionY = `${scrollPos * 0.5}px`;
   }
 });
+// Cerrar el menú al hacer clic en un link
+const navLinks = document.querySelectorAll('.nav-minimal a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('show');       // oculta el menú
+    hamburger.classList.remove('active'); // vuelve la X a hamburguesa
+  });
+});
