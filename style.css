@@ -285,31 +285,64 @@ footer a:hover {text-decoration:underline;}
 .divider-green {
   border: 0;
   height: 4px;
-  width: 250px; /* o el ancho que quieras */
+  width: 500px; /* o el ancho que quieras */
   background-color: #25D366; /* verde corporativo */
   margin: 40px auto; /* centrado y con espacio arriba y abajo */
   border-radius: 2px; /* bordes redondeados */
 }
-
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 18px;
-    font-size: 18px;
-    display: inline-block;
-    border: 2px solid transparent; /* Para activar el borde */
-    border-radius: 8px;
-    background: linear-gradient(#000, #000) padding-box, /* Fondo interno negro */
-                linear-gradient(90deg, #00ff88, #00ffcc) border-box; /* Gradiente del borde */
-    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1100;
 }
 
-/* Efecto al pasar el mouse o dedo */
-.nav-links a:hover {
-    color: #00ffcc;
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
+/* Estado activo (animación cruz) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 
+/* Nav lateral en móvil */
+@media(max-width:768px){
+  .nav-minimal {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-minimal.show {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
