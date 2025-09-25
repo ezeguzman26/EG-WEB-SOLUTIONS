@@ -6,7 +6,9 @@ const nav = document.getElementById('nav');
 
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('show');
+  hamburger.classList.toggle('active');
 });
+
 
 // Hero parallax en desktop
 const hero = document.querySelector('.hero');
