@@ -5,9 +5,14 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
 hamburger.addEventListener('click', () => {
-  nav.classList.toggle('show');
+  const isOpen = nav.classList.toggle('show');
   hamburger.classList.toggle('active');
+
+  // 🔒 Bloquear / desbloquear scroll
+  document.body.classList.toggle('no-scroll', isOpen);
 });
+
+
 
 
 // Hero parallax en desktop
@@ -23,7 +28,9 @@ const navLinks = document.querySelectorAll('.nav-minimal a');
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    nav.classList.remove('show');       // oculta el menú
-    hamburger.classList.remove('active'); // vuelve la X a hamburguesa
+    nav.classList.remove('show');
+    hamburger.classList.remove('active');
+    document.body.classList.remove('no-scroll'); // 🔓 vuelve el scroll
   });
 });
+
